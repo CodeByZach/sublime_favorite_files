@@ -21,6 +21,18 @@
 					{
 						"caption": "Remove Favorite File(s)",
 						"command": "favorite_files_remove"
+					},
+					{
+						"caption": "Edit Favorite File(s) Alias",
+						"command": "favorite_files_edit_alias"
+					},
+					{
+						"caption": "Clean Orphaned Favorites",
+						"command": "favorite_files_clean_orphans"
+					},
+					{
+						"caption": "Toggle Per Project",
+						"command": "favorite_files_toggle_per_project"
 					}
 				]
 			}
