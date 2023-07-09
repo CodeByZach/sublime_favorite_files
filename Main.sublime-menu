@@ -10,30 +10,12 @@
 				"caption": "Favorite Files",
 				"children":
 				[
-					{
-						"caption": "Add to Favorite Files",
-						"command": "favorite_files_add"
-					},
-					{
-						"caption": "Open Favorite File(s)",
-						"command": "favorite_files_open"
-					},
-					{
-						"caption": "Remove Favorite File(s)",
-						"command": "favorite_files_remove"
-					},
-					{
-						"caption": "Edit Favorite File(s) Alias",
-						"command": "favorite_files_edit_alias"
-					},
-					{
-						"caption": "Clean Orphaned Favorites",
-						"command": "favorite_files_clean_orphans"
-					},
-					{
-						"caption": "Toggle Per Project",
-						"command": "favorite_files_toggle_per_project"
-					}
+					{ "caption": "Add to Favorite Files",       "command": "favorite_files_add" },
+					{ "caption": "Open Favorite File(s)",       "command": "favorite_files_open" },
+					{ "caption": "Remove Favorite File(s)",     "command": "favorite_files_remove" },
+					{ "caption": "Edit Favorite File(s) Alias", "command": "favorite_files_edit_alias" },
+					{ "caption": "Clean Orphaned Favorites",    "command": "favorite_files_clean_orphans" },
+					{ "caption": "Toggle Per Project",          "command": "favorite_files_toggle_per_project" }
 				]
 			}
 		]
@@ -72,7 +54,7 @@
 							{ "caption": "-" },
 							{
 								"caption": "Key Bindings",
-								"command": "edit_settings",
+								"command": "z_edit_settings",
 								"args":
 								{
 									"base_file": "${packages}/FavoriteFiles/Default.sublime-keymap",
@@ -90,28 +72,7 @@
 										"command": "z_edit_settings",
 										"args":
 										{
-											"is_parent_setting": "1",
 											"base_file": "${packages}/FavoriteFiles/Context.sublime-menu",
-											"default": "[\n\t$0\n]\n"
-										}
-									},
-									{
-										"caption": "Side Bar Menu",
-										"command": "z_edit_settings",
-										"args":
-										{
-											"is_parent_setting": "1",
-											"base_file": "${packages}/FavoriteFiles/Side Bar.sublime-menu",
-											"default": "[\n\t$0\n]\n"
-										}
-									},
-									{
-										"caption": "Tab Menu",
-										"command": "z_edit_settings",
-										"args":
-										{
-											"is_parent_setting": "1",
-											"base_file": "${packages}/FavoriteFiles/Tab Context.sublime-menu",
 											"default": "[\n\t$0\n]\n"
 										}
 									},
@@ -120,8 +81,43 @@
 										"command": "z_edit_settings",
 										"args":
 										{
-											"is_parent_setting": "1",
 											"base_file": "${packages}/FavoriteFiles/Main.sublime-menu",
+											"default": "[\n\t$0\n]\n"
+										}
+									},
+									{
+										"caption": "Side Bar Menu",
+										"command": "z_edit_settings",
+										"args":
+										{
+											"base_file": "${packages}/FavoriteFiles/Side Bar.sublime-menu",
+											"default": "[\n\t$0\n]\n"
+										}
+									},
+									{
+										"caption": "Side Bar Open Files Menu",
+										"command": "z_edit_settings",
+										"args":
+										{
+											"base_file": "${packages}/FavoriteFiles/Tab Sidebar Context.sublime-menu",
+											"default": "[\n\t$0\n]\n"
+										}
+									},
+									{
+										"caption": "Tab Menu",
+										"command": "z_edit_settings",
+										"args":
+										{
+											"base_file": "${packages}/FavoriteFiles/Tab Context.sublime-menu",
+											"default": "[\n\t$0\n]\n"
+										}
+									},
+									{
+										"caption": "Widget Menu",
+										"command": "z_edit_settings",
+										"args":
+										{
+											"base_file": "${packages}/FavoriteFiles/Widget Context.sublime-menu",
 											"default": "[\n\t$0\n]\n"
 										}
 									}
@@ -132,7 +128,6 @@
 								"command": "z_edit_settings",
 								"args":
 								{
-									"is_parent_setting": "1",
 									"base_file": "${packages}/FavoriteFiles/Default.sublime-commands",
 									"default": "[\n\t$0\n]\n"
 								}
