@@ -7,28 +7,27 @@ on:
       - 'docs/**'
       - 'mkdocs.yml'
       - 'docs/requirements.txt'
-    tags:
-      - '*'
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'mkdocs.yml'
+      - 'docs/requirements.txt'
+  release:
+    types: [published]
   workflow_dispatch:
 
 jobs:
-  build-docs:
+  docs:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    strategy:
-      matrix:
-        python-version: ["3.8", "3.9", "3.10", "3.11"]
-
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: "3.8"
           cache: 'pip'
           cache-dependency-path: |
             docs/requirements.txt
@@ -38,13 +37,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r docs/requirements.txt
 
-      - name: Configure Git
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Build documentation
+        run: mkdocs build --clean --verbose
 
-      - name: Build and deploy documentation
+      - name: Deploy documentation
+        if: github.event_name == 'release'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          git fetch origin gh-pages || git switch --orphan gh-pages
           mkdocs gh-deploy --force --clean --verbose
