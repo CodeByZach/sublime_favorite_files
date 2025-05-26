@@ -125,6 +125,16 @@ def patch_doc_config(config_file):
 def build_docs():
     """Build docs with MkDocs."""
     print('Building Docs...')
+
+    # Ensure directories exist
+    dirs_to_create = [
+        os.path.join(BUILD_DIR, 'docs', 'theme'),
+        os.path.join(BUILD_DIR, 'docs', 'src', 'markdown')
+    ]
+    for directory in dirs_to_create:
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+
     print(
         console(
             [

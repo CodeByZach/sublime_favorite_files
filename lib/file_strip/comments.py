@@ -103,7 +103,7 @@ def _python(text, preserve_lines=False):
     )
 
 
-class CommentException(Exception):
+class CommentError(Exception):
     """Comment exception."""
 
     def __init__(self, value):
@@ -142,7 +142,7 @@ class Comments(object):
         if style in self.styles:
             return getattr(self, style)
         else:
-            raise CommentException(style)
+            raise CommentError(style)
 
     def strip(self, text):
         """Strip comments."""

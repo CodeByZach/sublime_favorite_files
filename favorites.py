@@ -9,7 +9,7 @@ import sublime
 import os
 import json
 
-from FavoriteFiles.lib.file_strip.json import sanitize_json
+from FavoriteFiles.lib.file_strip.json_parse import sanitize_json
 from FavoriteFiles.lib.notify import error
 
 FAVORITE_LIST_VERSION = 1
@@ -237,9 +237,9 @@ class Favorites(object):
         self.obj.global_file = global_file
         self.obj.last_access = 0
         self.obj.file_name = self.obj.global_file
-        self.open(self.obj)
+        self.open_favorites(self.obj)
 
-    def open(self, win_id=None):
+    def open_favorites(self, win_id=None):
         """Open favorites."""
 
         return FavFileMgr.load_favorite_files(self.obj, force=True, win_id=win_id)
@@ -305,7 +305,7 @@ class Favorites(object):
 
         self.save(True)
 
-    def set(self, s, group_name=None):
+    def set_file(self, s, group_name=None):
         """Add file in global or group list."""
 
         s = {"file": s, "alias": os.path.basename(s)}

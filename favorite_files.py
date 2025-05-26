@@ -200,7 +200,7 @@ class FavoriteFilesAddCommand(sublime_plugin.WindowCommand):
         for n in names:
             if Favs.file_index(n, group_name=group_name) is None:
                 if os.path.exists(n):
-                    Favs.set(n, group_name=group_name)
+                    Favs.set_file(n, group_name=group_name)
                     added += 1
                 else:
                     # File does not exist on disk; cannot add
@@ -466,7 +466,7 @@ class FavoriteFilesTogglePerProjectCommand(sublime_plugin.WindowCommand):
         if Favs.toggle_per_projects(win_id):
             error('Could not find a project file!')
         else:
-            Favs.open(win_id=self.window.id())
+            Favs.open_favorites(win_id=self.window.id())
 
     def is_enabled(self):
         """Check if command is enabled."""

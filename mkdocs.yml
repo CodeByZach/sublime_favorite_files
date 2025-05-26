@@ -13,64 +13,47 @@ nav:
   - Contributing & Support: contributing.md
   - License: license.md
 
-theme: material
 docs_dir: docs/src/markdown
-custom_dir: docs/theme
+theme:
+  name: material
+  custom_dir: docs/theme
+  features:
+    - content.code.copy
+    - navigation.tracking
+    - navigation.sections
 
 markdown_extensions:
-  - markdown.extensions.toc:
-      slugify: !!python/name:pymdownx.slugs.uslugify
-      permalink: "\ue157"
-  - markdown.extensions.admonition:
-  - markdown.extensions.smarty:
-      smart_quotes: false
-  - pymdownx.betterem:
-  - markdown.extensions.attr_list:
-  - markdown.extensions.def_list:
-  - markdown.extensions.tables:
-  - markdown.extensions.abbr:
-  - pymdownx.rawhtml:
-  - pymdownx.superfences:
+  - toc:
+      permalink: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
   - pymdownx.highlight:
-      css_class: codehilite
-      extend_pygments_lang:
-        - name: php-inline
-          lang: php
-          options:
-            startinline: true
-  - pymdownx.inlinehilite:
-  - pymdownx.magiclink:
-      repo_url_shortener: true
-      base_repo_url: https://github.com/CodeByZach/sublime_favorite_files
-  - pymdownx.tilde:
-  - pymdownx.caret:
-  - pymdownx.smartsymbols:
-  - pymdownx.emoji:
-      emoji_generator: !!python/name:pymdownx.emoji.to_png
-  - pymdownx.escapeall:
-      hardbreak: true
-      nbsp: true
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.progressbar:
-  - pymdownx.plainhtml:
-      strip_attributes: ''
+      anchor_linenums: true
+  - pymdownx.inlinehilite
   - pymdownx.snippets:
       base_path: docs/src/markdown/_snippets
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
   - pymdownx.keys:
-      separator: "\uff0b"
-  - pymdownx.details:
+      separator: "+"
+  - def_list
+  - attr_list
+  - md_in_html
+  - tables
+  - abbr
 
 extra:
-  palette:
-    primary: blue
-    accent: blue
-  font:
-    text: Roboto
-    code: Roboto Mono
   social:
-    - type: github
+    - icon: fontawesome/brands/github
       link: https://github.com/CodeByZach
+      name: CodeByZach on GitHub
+
 extra_css:
   - extra-00833721db.css
 extra_javascript:

@@ -1,4 +1,7 @@
-mkdocs-material>=9.0.0
-pymdown-extensions>=10.0.0
-pygments>=2.0.0
-mkdocs>=1.5.0
+# Documentation build
+mkdocs
+mkdocs-material
+
+# Markdown extensions
+pymdown-extensions
+pygments
