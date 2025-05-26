@@ -7,7 +7,6 @@ on:
       - 'docs/**'
       - 'mkdocs.yml'
       - 'docs/requirements.txt'
-  push:
     tags:
       - '*'
   workflow_dispatch:
@@ -19,7 +18,7 @@ jobs:
       contents: write
     strategy:
       matrix:
-        python-version: ["3.8"]
+        python-version: ["3.8", "3.9", "3.10", "3.11"]
 
     steps:
       - uses: actions/checkout@v4
