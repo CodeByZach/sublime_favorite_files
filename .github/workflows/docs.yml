@@ -11,9 +11,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy-docs:
+  build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -32,15 +31,16 @@ jobs:
       - name: Build documentation
         run: mkdocs build --clean --verbose --strict
 
-      - name: Deploy to GitHub Pages
-        uses: actions/configure-pages@v3
-
-      - name: Publish to GitHub Pages
-        id: publish
-        uses: actions/upload-pages-artifact@v1
+      - name: Upload static files as artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: site/
 
-      - name: Release GitHub Pages
-        uses: actions/deploy-pages@v1
-        if: ${{ always() }}
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
