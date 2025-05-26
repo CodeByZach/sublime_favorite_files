@@ -1,6 +1,6 @@
 site_name: FavoriteFiles Documentation
-site_url: https://facelessuser.github.io/FavoriteFiles
-repo_url: https://github.com/facelessuser/FavoriteFiles
+site_url: https://codebyzach.github.io/sublime_favorite_files
+repo_url: https://github.com/CodeByZach/sublime_favorite_files
 edit_uri: tree/master/docs/src/markdown
 site_description: Sublime Text plugin for saving and accessing favorite files.
 copyright: |
@@ -41,7 +41,7 @@ markdown_extensions:
   - pymdownx.inlinehilite:
   - pymdownx.magiclink:
       repo_url_shortener: true
-      base_repo_url: https://github.com/facelessuser/FavoriteFiles
+      base_repo_url: https://github.com/CodeByZach/sublime_favorite_files
   - pymdownx.tilde:
   - pymdownx.caret:
   - pymdownx.smartsymbols:
@@ -70,7 +70,7 @@ extra:
     code: Roboto Mono
   social:
     - type: github
-      link: https://github.com/facelessuser
+      link: https://github.com/CodeByZach
 extra_css:
   - extra-00833721db.css
 extra_javascript:
