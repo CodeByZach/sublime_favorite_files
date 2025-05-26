@@ -1,0 +1,8 @@
+flake8
+flake8-docstrings
+flake8-mutable
+flake8-builtins
+pep8-naming
+pytest
+# Documentation dependencies
+-r docs/requirements.txt
