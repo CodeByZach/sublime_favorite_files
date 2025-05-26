@@ -30,4 +30,4 @@ deploy:
     local_dir: site
     on:
       tags: true
-      repo: facelessuser/FavoriteFiles
+      repo: CodeByZach/sublime_favorite_files
