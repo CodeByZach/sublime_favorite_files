@@ -4,7 +4,7 @@ repo_url: https://github.com/CodeByZach/sublime_favorite_files
 edit_uri: tree/master/docs/src/markdown
 site_description: Sublime Text plugin for saving and accessing favorite files.
 copyright: |
-  Copyright &copy; 2011 - 2025 <a href="https://github.com/facelessuser"  target="_blank" rel="noopener">Isaac Muse</a>
+  Copyright &copy; 2011 - 2025 <a href="https://github.com/facelessuser" target="_blank" rel="noopener">Isaac Muse</a>
 
 docs_dir: docs/src/markdown
 theme:
@@ -25,14 +25,11 @@ theme:
     - search.share
     - search.highlight
     - search.suggest
-  pymdownx:
-    sponsor: "https://github.com/sponsors/facelessuser"
 
 nav:
   - Installation: installation.md
   - User Guide: index.md
   - Contributing &amp; Support: contributing.md
-  - License: license.md
 
 markdown_extensions:
   - markdown.extensions.toc:
@@ -58,8 +55,8 @@ markdown_extensions:
       repo_url_shortener: true
       repo_url_shorthand: true
       social_url_shorthand: true
-      user: facelessuser
-      repo: FavoriteFiles
+      user: CodeByZach
+      repo: sublime_favorite_files
   - pymdownx.tilde:
   - pymdownx.caret:
   - pymdownx.smartsymbols:
