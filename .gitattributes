@@ -4,6 +4,8 @@
 # Files & folders that should not be included in production.
 /.github/        export-ignore
 /.prospector.yml export-ignore
+/.pyspelling.yml export-ignore
 /docs/           export-ignore
 /mkdocs.yml      export-ignore
 /tests/          export-ignore
+/tox.ini         export-ignore
