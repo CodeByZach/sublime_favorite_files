@@ -1,5 +1,5 @@
 # FavoriteFiles
-[![Latest Release](https://img.shields.io/github/tag/CodeByZach/sublime_favorite_files.svg?label=version)](https://github.com/CodeByZach/sublime_favorite_files/releases)
+[![Latest Release](lr-image)](lr-link)
 [![Package Control Downloads][pc-image]][pc-link]
 [![License][license-image]][license-link]
 
@@ -19,7 +19,9 @@ https://codebyzach.github.io/sublime_favorite_files/
 
 FavoriteFiles is released under the [MIT license](LICENSE).
 
-[pc-image]: https://img.shields.io/packagecontrol/dt/FavoriteFiles.svg
+[lr-image]: https://img.shields.io/github/tag/CodeByZach/sublime_favorite_files.svg?label=version
+[lr-link]: https://github.com/CodeByZach/sublime_favorite_files/releases
+[pc-image]: https://img.shields.io/packagecontrol/dt/FavoriteFiles.svg?labelColor=333333&logo=sublime%20text
 [pc-link]: https://packagecontrol.io/packages/FavoriteFiles
-[license-image]: https://img.shields.io/badge/license-MIT-blue.svg
+[license-image]: https://img.shields.io/badge/license-MIT-blue.svg?labelColor=333333
 [license-link]: LICENSE

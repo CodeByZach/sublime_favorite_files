@@ -1,14 +1,20 @@
-# FavoriteFiles 1.6.0
+# FavoriteFiles
 
-> Released Oct 23, 2017
+## 1.7.0
 
-- **NEW**: Add alias support.
-- **NEW**: Commands were renamed internally to be prefixed with `FavoriteFiles`.
-- **FIX**: General internal bugs.
+-   **NEW**: Changes to support Python 3.13 on ST 4201+.
 
-# FavoriteFiles 1.5.0
+## 1.6.1
 
-> Released May 29, 2017
+-   **FIX**: Ensure `typing` dependency for Python 3.3.
 
-- **NEW**: Support commands.
-- **FIX**: Fix error message bug.
+## 1.6.0
+
+-   **NEW**: Add alias support.
+-   **NEW**: Commands were renamed internally to be prefixed with `FavoriteFiles`.
+-   **FIX**: General internal bugs.
+
+## 1.5.0
+
+-   **NEW**: Support commands.
+-   **FIX**: Fix error message bug.
