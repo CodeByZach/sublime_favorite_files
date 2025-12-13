@@ -1,5 +1,5 @@
 # FavoriteFiles
-[![Latest Release](lr-image)](lr-link)
+[![Latest Release][lr-image]][lr-link]
 [![Package Control Downloads][pc-image]][pc-link]
 [![License][license-image]][license-link]
 

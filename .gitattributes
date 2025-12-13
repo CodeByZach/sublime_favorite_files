@@ -2,8 +2,8 @@
 .gitattributes export-ignore
 
 # Files & folders that should not be included in production.
-/docs/           export-ignore
-/tests/          export-ignore
+/.github/        export-ignore
 /.prospector.yml export-ignore
+/docs/           export-ignore
 /mkdocs.yml      export-ignore
-/setup.cfg       export-ignore
+/tests/          export-ignore
