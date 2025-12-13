@@ -1,7 +1,2 @@
-# Documentation build
-mkdocs
-mkdocs-material
-
-# Markdown extensions
-pymdown-extensions
-pygments
+# Documentation build - redirect to canonical location
+-r src/requirements.txt

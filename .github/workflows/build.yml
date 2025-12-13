@@ -1,75 +1,71 @@
-name: build
+name: Build
 
 on:
   push:
     branches:
       - 'master'
     tags:
-    - '**'
+      - '**'
   pull_request:
     branches:
-    - '**'
+      - '**'
 
 jobs:
   tests:
-
-    env:
-      TOXENV: py311
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.11
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip setuptools tox build
-    - name: Tests
-      run: |
-        python -m tox
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: '.python-version'
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip setuptools tox
+
+      - name: Run tests
+        run: python -m tox -e py
 
   lint:
-
-    env:
-      TOXENV: lint
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.11
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip setuptools tox build
-    - name: Lint
-      run: |
-        python -m tox
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: '.python-version'
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip setuptools tox
+
+      - name: Run linter
+        run: python -m tox -e lint
 
   documents:
-
-    env:
-      TOXENV: documents
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.11
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip setuptools tox build
-    - name: Install Aspell
-      run: |
-        sudo apt-get install aspell aspell-en
-    - name: Build documents
-      run: |
-        python -m tox
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install system dependencies
+        run: sudo apt-get install -y aspell aspell-en
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: '.python-version'
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip setuptools tox
+
+      - name: Build documents
+        run: python -m tox -e documents
