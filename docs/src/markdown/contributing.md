@@ -31,13 +31,11 @@ Contribution from the community is encouraged and can be done in a variety of wa
 
 ## Reviewing Code
 
-Take part in reviewing pull requests and/or reviewing direct commits. Make suggestions to improve the code and discuss
-solutions to overcome weakness in the algorithm.
+Take part in reviewing pull requests and/or reviewing direct commits. Make suggestions to improve the code and discuss solutions to overcome weakness in the algorithm.
 
 ## Pull Requests
 
-Pull requests are welcome, and if you plan on contributing directly to the code, there are a couple of things to be
-mindful of.
+Pull requests are welcome, and if you plan on contributing directly to the code, there are a couple of things to be mindful of.
 
 1.  Please describe the change in as much detail as possible so I can understand what is being added or modified.
 
