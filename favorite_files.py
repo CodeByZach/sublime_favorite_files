@@ -200,7 +200,7 @@ class FavoriteFilesAddCommand(sublime_plugin.WindowCommand):
         for n in names:
             if Favs.file_index(n, group_name=group_name) is None:
                 if os.path.exists(n):
-                    Favs.set_file(n, group_name=group_name)
+                    Favs.set(n, group_name=group_name)
                     added += 1
                 else:
                     # File does not exist on disk; cannot add
